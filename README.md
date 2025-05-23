@@ -1,3 +1,59 @@
-# Pneumonia-Detection-from-X-Ray-Images
-This project aims to help detect Pneumonia from X-ray images using Transfer Learning with the VGG16 model. By fine-tuning a pre-trained model and applying data augmentation, it accurately classifies X-ray images as either normal or showing signs of pneumonia.
+
+Pneumonia Detection from Chest X-Rays
+📌 Project Overview
+A deep learning-based diagnostic system that classifies chest X-ray images into Normal or Pneumonia cases using a fine-tuned VGG16 model with transfer learning. The model achieves high accuracy and reliability, making it suitable for assisting medical diagnosis.
+
+🛠️ Technical Implementation
+📂 Dataset
+Source: Kaggle Chest X-Ray Images (Pneumonia)
+
+Classes: Normal (1,349) | Pneumonia (3,883)
+
+Preprocessing:
+
+Resizing (224×224)
+
+Normalization (0-1 scaling)
+
+Data Augmentation (rotation, shifts, zoom, flip)
+
+🤖 Model Architecture
+Base Model: VGG16 (pre-trained on ImageNet)
+
+Fine-tuning: Last 5 layers unfrozen
+
+Custom Head:
+
+Global Average Pooling
+
+Dense (128 neurons, ReLU)
+
+Output (Sigmoid, binary classification)
+
+⚙️ Training Setup
+Optimizer: Adam (LR=0.0001)
+
+Loss: Binary Cross-Entropy
+
+Early Stopping (patience=10)
+
+Learning Rate Scheduling (decay after 15 epochs)
+
+
+📊 Performance & Evaluation
+Metric	Score
+Accuracy	92%
+Precision	93%
+Recall	98%
+F1-Score	95%
+Confusion Matrix Analysis (TP, TN, FP, FN)
+
+
+🎯 Key Features
+✔ High Diagnostic Accuracy (~92%)
+✔ Robust Data Augmentation (prevents overfitting)
+✔ Model Interpretability (sample predictions + visualizations)
+✔ Unseen Image Testing (supports real-world deployment)
+
+
 ![Image](https://github.com/user-attachments/assets/d840657a-a7bd-4552-95c6-c9ab1d3c432b)
