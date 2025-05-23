@@ -2,41 +2,46 @@
 
 **📌 Project Overview**
 A deep learning-based diagnostic system that classifies chest X-ray images into Normal or Pneumonia cases using a fine-tuned VGG16 model with transfer learning. The model achieves high accuracy and reliability, making it suitable for assisting medical diagnosis.
+__________________________________________________________________________________________
+** Dataset**
+Source: [Chest X-Ray Images (Pneumonia) | Kaggle
+](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
+Classes: Normal (1,349 images) | Pneumonia (3,883 images)
 
-**Technical Implementation**
-📂 Dataset
-Source:(https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
-Classes: Normal (1,349) | Pneumonia (3,883)
-
-**Preprocessing**
-Resizing (224×224)
-Normalization (0-1 scaling)
-Data Augmentation (rotation, shifts, zoom, flip)
+Split: Train (70%) | Validation (15%) | Test (15%)
 
 **Model Architecture**
-Base Model: VGG16 (pre-trained on ImageNet)
-Fine-tuning: Last 5 layers unfrozen
+Base Model:
+VGG16 (pretrained on ImageNet, include_top=False)
+
+Input Shape: (224, 224, 3)
+
+Custom Classification Head:
 Global Average Pooling
-Dense (128 neurons, ReLU)
-Output (Sigmoid, binary classification)
 
-- **Training Setup**
-Optimizer: Adam (LR=0.0001)
-Loss: Binary Cross-Entropy
-Early Stopping (patience=10)
-Learning Rate Scheduling (decay after 15 epochs)
+Dense Layer (128 units, ReLU activation)
 
+Output Layer (1 unit, Sigmoid activation)
 
-Performance & Evaluation:
-Precision, Recall, Accuracy, F1-Score
-Confusion Matrix Analysis (TP, TN, FP, FN)
+**Training Configuration:**
+Optimizer: Adam (lr=0.0001)
 
+Loss: Binary Crossentropy
 
-** Key Features**
-✔ High Diagnostic Accuracy (~92%)
-✔ Robust Data Augmentation (prevents overfitting)
-✔ Model Interpretability (sample predictions + visualizations)
-✔ Unseen Image Testing (supports real-world deployment)
+Metrics: Accuracy, Precision, Recall
+
+Callbacks: Early Stopping, Model Checkpointing
+
+📈 Performance Metrics
+Metric	Training	Validation	Test
+Accuracy, Precision, Recall, F1-Score	
+
+**Tools & Technologies**
+Languages: Python 3.x
+
+Libraries: TensorFlow, Keras, OpenCV, NumPy, Matplotlib, scikit-learn
+
+Data Handling: OpenDatasets (Kaggle integration)
 
 
 ![Image](https://github.com/user-attachments/assets/d840657a-a7bd-4552-95c6-c9ab1d3c432b)
