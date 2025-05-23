@@ -1,12 +1,13 @@
 
-Pneumonia Detection from Chest X-Rays
+#Pneumonia Detection from Chest X-Rays
+
 📌 Project Overview
 A deep learning-based diagnostic system that classifies chest X-ray images into Normal or Pneumonia cases using a fine-tuned VGG16 model with transfer learning. The model achieves high accuracy and reliability, making it suitable for assisting medical diagnosis.
 
 🛠️ Technical Implementation
 📂 Dataset
-Source: Kaggle Chest X-Ray Images (Pneumonia)
-
+Source: [Kaggle Chest X-Ray Images (Pneumonia)
+](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
 Classes: Normal (1,349) | Pneumonia (3,883)
 
 Preprocessing:
